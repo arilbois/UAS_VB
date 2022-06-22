@@ -10,6 +10,7 @@ Public Class Form1
     Dim da As OleDbDataAdapter
     Dim dset As DataSet
     Private crv As Object
+    Dim jenisKelamin As String
 
     Sub View()
         da = New OleDbDataAdapter(" SELECT * FROM siswa", koneksi)
@@ -51,7 +52,7 @@ Public Class Form1
         If find = False Then
             ' simpan data
             konek()
-            cmd = New OleDbCommand(" INSERT INTO siswa VALUES('" & nop.Text & "','" & prodi.Text & "','" & nama.Text & "','" & jenisKelamin.Text & "','" & TempatLahir.Text & "','" & TanggalLahir.Text & "','" & agama.Text & "','" & alamat.Text & "','" & noHP.Text & "','" & email.Text & "')", koneksi)
+            cmd = New OleDbCommand(" INSERT INTO siswa VALUES('" & nop.Text & "','" & prodi.Text & "','" & nama.Text & "','" & jenisKelamin & "','" & TempatLahir.Text & "','" & TanggalLahir.Text & "','" & agama.Text & "','" & alamat.Text & "','" & noHP.Text & "','" & email.Text & "')", koneksi)
             cmd.ExecuteNonQuery()
             MsgBox("Data Berhasil Disimpan")
             View()
@@ -60,7 +61,7 @@ Public Class Form1
         Else
             ' edit data
             konek()
-            cmd = New OleDbCommand(" UPDATE siswa set nama = '" & nama.Text & "',prodi = '" & prodi.Text & "',jenisKelamin = '" & jenisKelamin.Text & "',tempatLahir = '" & TempatLahir.Text & "',tanggalLahir = '" & TanggalLahir.Text & "',agama = '" & agama.Text & "',alamat = '" & alamat.Text & "',noHP = '" & noHP.Text & "', email = '" & email.Text & "' WHERE nop = '" & nop.Text & "' ", koneksi)
+            cmd = New OleDbCommand(" UPDATE siswa set nama = '" & nama.Text & "',prodi = '" & prodi.Text & "',jenisKelamin = '" & jenisKelamin & "',tempatLahir = '" & TempatLahir.Text & "',tanggalLahir = '" & TanggalLahir.Text & "',agama = '" & agama.Text & "',alamat = '" & alamat.Text & "',noHP = '" & noHP.Text & "', email = '" & email.Text & "' WHERE nop = '" & nop.Text & "' ", koneksi)
             cmd.ExecuteNonQuery()
             MsgBox("Data Berhasil Diubah")
             View()
@@ -122,5 +123,17 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Close()
+    End Sub
+
+    Private Sub rd1_CheckedChanged(sender As Object, e As EventArgs) Handles rd1.CheckedChanged
+        If rd1.Checked = True Then
+            jenisKelamin = "Laki - Laki"
+        End If
+    End Sub
+
+    Private Sub rd2_CheckedChanged(sender As Object, e As EventArgs) Handles rd2.CheckedChanged
+        If rd2.Checked = True Then
+            jenisKelamin = "Perempuan"
+        End If
     End Sub
 End Class

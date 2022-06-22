@@ -46,7 +46,8 @@ Partial Class Form1
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.jenisKelamin = New System.Windows.Forms.TextBox()
+        Me.rd1 = New System.Windows.Forms.RadioButton()
+        Me.rd2 = New System.Windows.Forms.RadioButton()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -112,12 +113,13 @@ Partial Class Form1
         '
         'TanggalLahir
         '
-        Me.TanggalLahir.CustomFormat = "dd/mm/yyyy"
+        Me.TanggalLahir.CustomFormat = "dd/MM/yyyy"
+        Me.TanggalLahir.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.TanggalLahir.Location = New System.Drawing.Point(177, 222)
         Me.TanggalLahir.Name = "TanggalLahir"
         Me.TanggalLahir.Size = New System.Drawing.Size(143, 20)
         Me.TanggalLahir.TabIndex = 11
-        Me.TanggalLahir.Value = New Date(2022, 6, 15, 0, 0, 0, 0)
+        Me.TanggalLahir.Value = New Date(2022, 6, 23, 0, 0, 0, 0)
         '
         'Label1
         '
@@ -253,19 +255,35 @@ Partial Class Form1
         Me.DataGridView1.Size = New System.Drawing.Size(983, 394)
         Me.DataGridView1.TabIndex = 26
         '
-        'jenisKelamin
+        'rd1
         '
-        Me.jenisKelamin.Location = New System.Drawing.Point(177, 143)
-        Me.jenisKelamin.Name = "jenisKelamin"
-        Me.jenisKelamin.Size = New System.Drawing.Size(143, 20)
-        Me.jenisKelamin.TabIndex = 27
+        Me.rd1.AutoSize = True
+        Me.rd1.Location = New System.Drawing.Point(177, 146)
+        Me.rd1.Name = "rd1"
+        Me.rd1.Size = New System.Drawing.Size(74, 17)
+        Me.rd1.TabIndex = 27
+        Me.rd1.TabStop = True
+        Me.rd1.Text = "Laki - Laki"
+        Me.rd1.UseVisualStyleBackColor = True
+        '
+        'rd2
+        '
+        Me.rd2.AutoSize = True
+        Me.rd2.Location = New System.Drawing.Point(252, 146)
+        Me.rd2.Name = "rd2"
+        Me.rd2.Size = New System.Drawing.Size(79, 17)
+        Me.rd2.TabIndex = 28
+        Me.rd2.TabStop = True
+        Me.rd2.Text = "Perempuan"
+        Me.rd2.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1366, 478)
-        Me.Controls.Add(Me.jenisKelamin)
+        Me.Controls.Add(Me.rd2)
+        Me.Controls.Add(Me.rd1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -322,5 +340,6 @@ Partial Class Form1
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents jenisKelamin As TextBox
+    Friend WithEvents rd1 As RadioButton
+    Friend WithEvents rd2 As RadioButton
 End Class

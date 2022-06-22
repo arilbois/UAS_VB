@@ -23,8 +23,9 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
-        Me.CrystalReport11 = New UAS_SYAHRIL.CrystalReport1()
-        Me.CrystalReport21 = New UAS_SYAHRIL.CrystalReport2()
+        Me.CrystalReport31 = New UAS_SYAHRIL.CrystalReport3()
+        Me.CrystalReportViewer2 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
+        Me.CrystalReport32 = New UAS_SYAHRIL.CrystalReport3()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -35,15 +36,28 @@ Partial Class Form2
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.ReportSource = Me.CrystalReport21
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1081, 697)
+        Me.CrystalReportViewer1.ReportSource = Me.CrystalReport31
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(800, 450)
         Me.CrystalReportViewer1.TabIndex = 0
+        '
+        'CrystalReportViewer2
+        '
+        Me.CrystalReportViewer2.ActiveViewIndex = 0
+        Me.CrystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.CrystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CrystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CrystalReportViewer2.Location = New System.Drawing.Point(0, 0)
+        Me.CrystalReportViewer2.Name = "CrystalReportViewer2"
+        Me.CrystalReportViewer2.ReportSource = Me.CrystalReport32
+        Me.CrystalReportViewer2.Size = New System.Drawing.Size(800, 450)
+        Me.CrystalReportViewer2.TabIndex = 1
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1081, 697)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.CrystalReportViewer2)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Name = "Form2"
         Me.Text = "Form2"
@@ -52,6 +66,7 @@ Partial Class Form2
     End Sub
 
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer
-    Friend WithEvents CrystalReport11 As CrystalReport1
-    Friend WithEvents CrystalReport21 As CrystalReport2
+    Friend WithEvents CrystalReport31 As CrystalReport3
+    Friend WithEvents CrystalReportViewer2 As CrystalDecisions.Windows.Forms.CrystalReportViewer
+    Friend WithEvents CrystalReport32 As CrystalReport3
 End Class
